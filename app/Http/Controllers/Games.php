@@ -17,19 +17,19 @@ class Games extends Controller
         $html_converted = file_get_contents($html);
         $build_files = $request->file('build');
         $template_files = $request->file('template');
-        Storage::disk('s3')->put('games/'.$game_details->id.'/'. $html->getClientOriginalName(),$html_converted);
+        Storage::disk(env('FILESYSTEM_DRIVER'))->put('games/'.$game_details->id.'/'. $html->getClientOriginalName(),$html_converted);
         foreach ( $build_files as $file) {
-          Storage::disk('s3')->put('games/'.$game_details->id.'/Build/'. $file->getClientOriginalName(),file_get_contents($file));
+          Storage::disk(env('FILESYSTEM_DRIVER'))->put('games/'.$game_details->id.'/Build/'. $file->getClientOriginalName(),file_get_contents($file));
         }
         foreach ( $template_files as $file) {
-          Storage::disk('s3')->put('games/'.$game_details->id.'/TemplateData/'. $file->getClientOriginalName(),file_get_contents($file));
+          Storage::disk(env('FILESYSTEM_DRIVER'))->put('games/'.$game_details->id.'/TemplateData/'. $file->getClientOriginalName(),file_get_contents($file));
         }
-        Game::where('id','=',$game_id)->update(['play_link'=>Storage::disk('s3')->url('games/'.$game_details->id.'/'.$html->getClientOriginalName())]);
+        Game::where('id','=',$game_id)->update(['play_link'=>Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$html->getClientOriginalName())]);
         $res = (object) array();
         $res->status = "Sucessful";
-        $res->play_link = Storage::disk('s3')->url('games/'.$game_details->id.'/'.$html->getClientOriginalName());
+        $res->play_link = Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$html->getClientOriginalName());
         return response()->json($res, 201);
-        // Storage::disk('s3')->deleteDirectory('barath');
+        // Storage::disk(env('FILESYSTEM_DRIVER'))->deleteDirectory('barath');
         // return "DOne";
 
       }
@@ -41,7 +41,7 @@ class Games extends Controller
     $game->play_link = "Not Yet Uploaded";
     $game->user_id=$userid;
     $game->description=$data["description"];
-    $game->images=$data["images"];
+    $game->images="Not Yet Uploaded";
     $game->tags=$data["tags"];
     $game->yt_video=$data["yt_video"];
     $game->save();
@@ -61,10 +61,13 @@ class Games extends Controller
     $data = $request->input();
     $game_id= $data["game_id"];
     Game::where('id',"=",$game_id)->delete();
-    Storage::disk('s3')->deleteDirectory('games/'.$game_id);
+    Storage::disk(env('FILESYSTEM_DRIVER'))->deleteDirectory('games/'.$game_id);
     $res = (object) array();
     $res->status = "Deleted";
     return response()->json($res, 410); 
 
+  }
+  public function creategameview(Request $request){
+    return view('create_game');
   }
 }

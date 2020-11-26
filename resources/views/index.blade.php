@@ -19,14 +19,13 @@
 </style>
     </head>
     <body>
-    
-    <form method="POST" action="/test">
+    <form method="POST" action="/login">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">              
     <label for="exampleInputEmail1">Email address</label>
-              <input type="text" name="email" class="form-control" >
-         <label for="exampleInputPassword1">Password</label>
-              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-             <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-		  </body>
+    <input type="text" name="email" class="form-control">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </body>
 </html>
