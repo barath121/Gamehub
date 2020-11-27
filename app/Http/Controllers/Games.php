@@ -66,6 +66,7 @@ class Games extends Controller
   }  
   public function searchgames (Request $request){
     $game = Game::where('title',"like",'%'.$request->search_string.'%')->get();
+    $res = (object) array();
     $res->status = "Sucessful";
     $res->gamedetails = $game;
     return response()->json($res, 201);
@@ -84,4 +85,13 @@ class Games extends Controller
   public function creategameview(Request $request){
     return view('create_game');
   }
+ 
+  public function getImages(Request $request){
+    $images = Image::where('game_id',"=", $request->game_id)->get();
+    $res = (object) array();
+    $res->status = "Sucessful";
+    $res->imagedetails = $images;
+    return response()->json($res, 201);
+  }
+
 }
