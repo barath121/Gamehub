@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet"  href="{{ asset('../css/styles.css') }}">
+    <link rel="stylesheet" type="text/css"  href="{{ asset('/css/style.css') }}">
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -23,32 +23,33 @@
 
 <body>
 
-    <div class="container p-5 ">
+    <div class="container p-lg-4 ">
         <div class="text-white box" style="">
-            <div class="d-flex p-5 justify-content-start">
+            <div class="d-flex p-5 justify-content-center">
                 <h3>Create a new project </h3>
             </div>
             <hr>
-            <form method="POST" action="/creategame">
-                <div class="row no-gutters ">
-                    <div class="col-8 pl-5 pr-5">
+            <form id="form1">
+                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="row no-gutters justify-content-center ">
+                    <div class="col-lg-8 pl-1 pr-1">
                         <div class="row no-gutters">
                             <p class="InputLabel">Title</p>
                         </div>
                         <div class="row no-gutters mb-3">
-                            <input type="text" class="form-control" name="title">
+                            <input type="text" class="form-control" name="title" placeholder = "Title of your game">
                         </div>
                         <div class="row no-gutters">
                             <p class="InputLabel">Description</p>
                         </div>
                         <div class="row no-gutters mb-3">
-                            <textarea class="form-control" type="description"></textarea>
+                            <textarea class="form-control" type="description" placeholder = "something about your game" ></textarea>
                         </div>
                         <div class="row no-gutters">
                             <p class="InputLabel">Youtube Video link</p>
                         </div>
                         <div class="row no-gutters mb-3">
-                            <input type="text" name="yt_link" placeholder="Eg: https://www.youtube.com/watch?v=SMdsteYFZF0"
+                            <input type="text" name="yt_video" placeholder="Enter the youtube video of your game"
                                 class="form-control ">
                         </div>
                         <div class="row no-gutters">
@@ -58,7 +59,7 @@
                             <div class="col">
                                 <input style="border-radius: 0.25rem 0 0 0.25rem" list="tagList" type="text"
                                     class="form-control d-inline-block" id="tagListInp" name="tags"
-                                    placeholder="Enter the tags" required="">
+                                    placeholder="Enter the tags" >
                                 <datalist id="tagList">
                                     <option value="HORROR"></option>
                                     <option value="ADVENTURE"></option>
@@ -93,7 +94,7 @@
                             </div>
                         </div>
                         <div class="row no-gutters mb-3">
-                            <button class="bg-light btn"  type="submit" >SUBMIT</button>
+                            <button class="btn btn-dark"  type="button" onclick = "createGame()">SUBMIT</button>
                         </div>
                     </div>                    
                 </div>
@@ -107,6 +108,12 @@
 <script>
 
     var tags = []
+    var tags_string = "";
+
+    var headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Origin": "*"
+    }
 
     function addTags() {
 
@@ -122,9 +129,11 @@
         tagchipName.innerHTML = inp;
         tagchipX.className = "ml-2"
         xicon.className = "fa fa-times"
+        xicon.style.cursor = "pointer"
 
-        if (tags.includes(inp) == false) {
+        if (tags.includes(inp) == false && inp != "") {
             tags.push(inp);
+            tags_string=="" ? tags_string = inp:tags_string = tags_string+"," + inp;
             TagParent.appendChild(tagchip);
             tagchip.appendChild(tagchipName);
             tagchipName.appendChild(tagchipX);
@@ -141,6 +150,27 @@
         document.getElementById("tagListInp").value = null;
         console.log(tags)
 
+    }
+
+    function createGame() {
+
+        var data = new FormData(document.getElementById('form1'));
+        data.delete("tags")
+        data.set("tags",tags_string);
+        console.log("data", data)
+        
+        fetch("http://localhost:8000/creategame", {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(data)
+        })
+            .then(function (response) {
+                console.log("done")
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data)
+            });
     }
 
 </script>
