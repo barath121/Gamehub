@@ -19,8 +19,8 @@ class CreateGamesTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->text('description');
             $table->text('play_link');
-            $table->text('images');
             $table->text('tags');
+            $table->string('icon');
             $table->text('yt_video');
             $table->boolean('is_published')->default(true);
             $table->timestamps();
