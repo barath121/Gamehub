@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background: black !important;  
+}
+
+
+.context {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 30vh;
+    overflow: hidden;
+    z-index: 1000;
+    /* justify-content: center; */
+    width: 90%;
+    left: 5%;
+    background-color: #b8d9ff;
+    height: 350px;
+    padding: 2%;
+
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+.login{
+    background-color: #273fad;
+    height: 500px;
+    padding: 2rem;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 85%;
+    width: 25rem;
+    transform: translate(-80%, -50%);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px grey;
+}
+
+.input{
+    width: 20rem;
+    border-radius: 1rem;
+    height: 2.5rem;
+    outline: none;
+    padding: 1rem;
+    border: 1px;
+    color: #000;
+    margin-top: 1rem;
+}
+
+.InputLabel{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.box{
+    background-color: black; 
+    border: 1px gray solid; 
+    box-shadow: 1px -1px 20px 2px #888888;
+}
+
+.tagBox{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #444;
+    display: inline-block;
+    font-size: 15px;
+    padding: 0px 4px;
+    margin: 2px;
+}
+.submitBtn{
+    width: fit-content; 
+    background-color: white;
+}

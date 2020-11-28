@@ -26,6 +26,8 @@ Route::post('/deletegame',[Games::class, 'deletegame']);
 Route::get('/searchgame',[Games::class, 'searchgames']);
 Route::get('/newgame',[Games::class, 'creategameview']);
 //User
+Route::get('/register',[Users::class, 'registerview']);
 Route::post('/register',[Users::class, 'register']);
+Route::get('/login',[Users::class, 'loginview']);
 Route::post('/login',[Users::class, 'login']);
 Route::get('/userdetails',[Users::class, 'getuserdetails']);

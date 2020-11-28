@@ -41,4 +41,10 @@ class Users extends Controller
         $res->game_details = $games_owned;
         return response()->json($res, 201);
     }
+    public function loginview(Request $request){
+        return view('login');
+    }
+    public function registerview(Request $request){
+        return view('register');
+    }
 }
