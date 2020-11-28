@@ -7,7 +7,12 @@
 }
 
 body{
+<<<<<<< HEAD
     background: black !important;  
+=======
+    background: #121212 !important;  
+    color:#FFFEFE !important;
+>>>>>>> 0a118d6bfd0eaf66425a2d714141ec88348cfa9a
 }
 
 
@@ -65,9 +70,13 @@ body{
 }
 
 .box{
+<<<<<<< HEAD
     background-color: black; 
     border: 1px gray solid; 
     box-shadow: 1px -1px 20px 2px #888888;
+=======
+    background-color: #202020; 
+>>>>>>> 0a118d6bfd0eaf66425a2d714141ec88348cfa9a
 }
 
 .tagBox{
@@ -81,5 +90,8 @@ body{
 }
 .submitBtn{
     width: fit-content; 
+<<<<<<< HEAD
     background-color: white;
+=======
+>>>>>>> 0a118d6bfd0eaf66425a2d714141ec88348cfa9a
 }
