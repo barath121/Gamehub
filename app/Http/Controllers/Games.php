@@ -56,7 +56,7 @@ class Games extends Controller
     $game->description=$data["description"];
     $game->icon="Not Yet Uploaded";
     $game->tags=$data["tags"];
-    $game->yt_video=$data["yt_video"];
+    $game->yt_video=str_replace('watch?v=', 'embed/', $data["yt_video"]);
     $game->save();
     $res = (object) array();
     $res->status = "Sucessful";
@@ -85,13 +85,25 @@ class Games extends Controller
   public function creategameview(Request $request){
     return view('create_game');
   }
- 
-  public function getImages(Request $request){
+  public function getGameData(Request $request){
+    $game =  (object) array();
+    $game = Game::where('id',"=", $request->game_id)->first();
+    $images = "";
+    if($game)
     $images = Image::where('game_id',"=", $request->game_id)->get();
+    if($game)
+    $user = User::where('id','=',$game->user_id)->first();
     $res = (object) array();
     $res->status = "Sucessful";
-    $res->imagedetails = $images;
+    $res->gamedata = $game;
+    $res->images = $images;
     return response()->json($res, 201);
   }
 
+  public function uploadView(Request $request){
+    return view('uploads');
+  }
+  public function gamedetails(Request $request){
+    return view('Game_details');
+  }
 }

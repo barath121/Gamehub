@@ -4,7 +4,7 @@
 
 <section id="newgame">
     <div class="d-flex justify-content-center p-3">
-        <form class="shadow rounded p-4 mt-5"  style="background-color: #202020;">
+        <form class="rounded p-4 mt-5 mb-5"  style="background-color: #202020;">
             <div class="text-center">
               <h2 class="text-white">Create a New Project</h2>
             </div> <br>
@@ -66,85 +66,6 @@
           </form>
     </div>
 </section>
-
-{{-- <div class="container p-lg-4 ">
-    <div class="text-white box" style="">
-        <div class="d-flex p-5 justify-content-center">
-            <h3>Create a new project </h3>
-        </div>
-        <hr>
-        <form id="form1">
-            <div class="row no-gutters justify-content-center ">
-                <div class="col-lg-8 pl-1 pr-1">
-                    <div class="row no-gutters">
-                        <p class="InputLabel">Title</p>
-                    </div>
-                    <div class="row no-gutters mb-3">
-                        <input type="text" class="form-control" name="title" placeholder = "Title of your game">
-                    </div>
-                    <div class="row no-gutters">
-                        <p class="InputLabel">Description</p>
-                    </div>
-                    <div class="row no-gutters mb-3">
-                        <textarea class="form-control" type="description" placeholder = "something about your game" ></textarea>
-                    </div>
-                    <div class="row no-gutters">
-                        <p class="InputLabel">Youtube Video link</p>
-                    </div>
-                    <div class="row no-gutters mb-3">
-                        <input type="text" name="yt_video" placeholder="Enter the youtube video of your game"
-                            class="form-control ">
-                    </div>
-                    <div class="row no-gutters">
-                        <p class="InputLabel">Tags</p>
-                    </div>
-                    <div class="row no-gutters mb-3">
-                        <div class="col">
-                            <input style="border-radius: 0.25rem 0 0 0.25rem" list="tagList" type="text"
-                                class="form-control d-inline-block" id="tagListInp" name="tags"
-                                placeholder="Enter the tags" >
-                            <datalist id="tagList">
-                                <option value="HORROR"></option>
-                                <option value="ADVENTURE"></option>
-                                <option value="ACTION"></option>
-                                <option value="SIMULATION"></option>
-                                <option value="ROLE PLAY"></option>
-                                <option value="OPEN WORLD"></option>
-                            </datalist>
-                        </div>
-                        <div class="col-auto">
-                            <button type="button" style="
-                                          background-color: #e9ecef;
-                                          /* border: 1px solid; */
-                                          border-radius: 0 5px 5px 0;
-                                          box-shadow: 0 0 0px 0;
-                                          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-                                        " class="btn d-inline-block">
-                                <i class="fa fa-arrow-right" onclick="addTags()"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row no-gutters">
-                        <div class="col">
-                            <div class="mb-3 w-100">
-                                <ul id="tags" style="border: 1px solid white;
-                               width: 100%;
-                               padding: 4px 2px;
-                               margin: 0;
-                               transition: 0.3s;
-                               min-height: 125px;"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row no-gutters mb-3">
-                        <button class="btn btn-dark"  type="button" onclick = "createGame()">SUBMIT</button>
-                    </div>
-                </div>                    
-            </div>
-        </form>
-
-    </div>
-</div> --}}
 
 <script>
 
@@ -211,6 +132,7 @@
         })
             .then(function (response) {
                 console.log("done")
+                window.href = "/uploadView"
                 return response.json();
             })
             .then(function (data) {

@@ -2,7 +2,7 @@
 
 @section('body')
 <section class="d-flex justify-content-center align-items-center vh-100 p-3" id="login">
-    <form class="shadow rounded p-4" action="/login" method="POST" style="background-color: #202020;">
+    <form class="rounded p-4" action="/login" method="POST" style="background-color: #202020;">
         <div class="text-center">
           <img src="{{URL::asset('images/logo.png')}}" alt="" style="width: 175px;">
         </div> <br>
