@@ -30,7 +30,6 @@
             </div>
             <hr>
             <form id="form1">
-                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="row no-gutters justify-content-center ">
                     <div class="col-lg-8 pl-1 pr-1">
                         <div class="row no-gutters">
@@ -166,6 +165,7 @@
         })
             .then(function (response) {
                 console.log("done")
+                window.href = "/uploadView"
                 return response.json();
             })
             .then(function (data) {

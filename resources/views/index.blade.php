@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-6 p-3">
-                <a href="#">
+                <a href="/gamedetails">
                     <img class="cover" src="{{URL::asset('images/img.webp')}}" alt=""> 
                     <br><br>
                     <div class="small text-white">Watch Dogs: Legion</div>
@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-6 col-6 p-3">
-                <a href="">
+                <a href="/gamedetails">
                     <img class="cover" src="{{URL::asset('images/img.webp')}}" alt="">
                     <br><br>
                     <div class="small text-white">Watch Dogs: Legion</div>
@@ -36,7 +36,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-6 col-6 p-3">
-                <a href="">
+                <a href="/gamedetails">
                     <img class="cover" src="{{URL::asset('images/img.webp')}}" alt="">
                     <br><br>
                     <div class="small text-white">Watch Dogs: Legion</div>
@@ -45,7 +45,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-6 col-6 p-3">
-                <a href="">
+                <a href="/gamedetails">
                     <img class="cover" src="{{URL::asset('images/img.webp')}}" alt="">
                     <br><br>
                     <div class="small text-white">Watch Dogs: Legion</div>
