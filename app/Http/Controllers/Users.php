@@ -24,7 +24,6 @@ class Users extends Controller
         $user = User::where('email','=',$email)->first();
         if($user->password == $password){
         $jwt = JWT::encode($user->id,env('JWT_SECRET'));    
-        echo($jwt);
         Cookie::queue('JWT', $jwt, 11000);
         return  response()->json($user);
         }
@@ -47,4 +46,11 @@ class Users extends Controller
     public function registerview(Request $request){
         return view('register');
     }
+     // public function logout(Request $request){
+    //     setcookie("JWT", "", time() - 3600);
+    //     $res = (object) array();
+    //     $res->status = "Sucessful";
+    //     $res->message = "Logout Sucessful";
+    //     return response()->json($res, 201);
+    // }
 }

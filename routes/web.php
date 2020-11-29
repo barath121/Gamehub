@@ -30,5 +30,6 @@ Route::get('/newgame',[Games::class, 'creategameview']);
 Route::get('/register',[Users::class, 'registerview']);
 Route::post('/register',[Users::class, 'register']);
 Route::get('/login',[Users::class, 'loginview']);
+Route::get('/logout',[Users::class, 'logout']);
 Route::post('/login',[Users::class, 'login']);
 Route::get('/userdetails',[Users::class, 'getuserdetails']);
