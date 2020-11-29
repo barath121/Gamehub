@@ -56,7 +56,7 @@ class Games extends Controller
     $game->description=$data["description"];
     $game->icon="Not Yet Uploaded";
     $game->tags=$data["tags"];
-    $game->yt_video=$data["yt_video"];
+    $game->yt_video=str_replace('watch?v=', 'embed/', $data["yt_video"]);
     $game->save();
     $res = (object) array();
     $res->status = "Sucessful";
