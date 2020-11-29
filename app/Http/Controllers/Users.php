@@ -15,7 +15,8 @@ class Users extends Controller
     $user->password=$data["password"];
     $user->email=$data["email"];
     $user->save();
-    return response()->json($user, 201);
+    return redirect('/login');
+    // return response()->json($user, 201);
     }
     public function login(Request $request){
         $data = $request->input();
@@ -26,7 +27,8 @@ class Users extends Controller
         $jwt = JWT::encode($user->id,env('JWT_SECRET'));    
         echo($jwt);
         Cookie::queue('JWT', $jwt, 11000);
-        return  response()->json($user);
+        return redirect('/');
+        // return  response()->json($user);
         }
         else{
         return "Password Is Wrong";}

@@ -1,97 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-*{
-    margin: 0px;
-    padding: 0px;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #121212!important;
     font-family: 'Ubuntu', sans-serif;
+} 
+
+a {
+    text-decoration: none!important;
 }
 
-body{
-<<<<<<< HEAD
-    background: black !important;  
-=======
-    background: #121212 !important;  
-    color:#FFFEFE !important;
->>>>>>> 0a118d6bfd0eaf66425a2d714141ec88348cfa9a
+::placeholder {
+    font-size: x-small;
 }
 
+.nopadding {
+    padding: 0 16px!important;
+    margin: 0!important;
+}
 
-.context {
+.nav-link:hover {
+    transform: scale(1.1);
+    color: white!important;
+}
+
+.cover {
     width: 100%;
-    display: flex;
-    position: absolute;
-    top: 30vh;
-    overflow: hidden;
-    z-index: 1000;
-    /* justify-content: center; */
-    width: 90%;
-    left: 5%;
-    background-color: #b8d9ff;
-    height: 350px;
-    padding: 2%;
-
 }
 
-.context h1{
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-}
-
-.login{
-    background-color: #273fad;
-    height: 500px;
-    padding: 2rem;
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 85%;
-    width: 25rem;
-    transform: translate(-80%, -50%);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px 1px grey;
-}
-
-.input{
-    width: 20rem;
-    border-radius: 1rem;
-    height: 2.5rem;
-    outline: none;
-    padding: 1rem;
-    border: 1px;
-    color: #000;
-    margin-top: 1rem;
-}
-
-.InputLabel{
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.box{
-<<<<<<< HEAD
-    background-color: black; 
-    border: 1px gray solid; 
-    box-shadow: 1px -1px 20px 2px #888888;
-=======
-    background-color: #202020; 
->>>>>>> 0a118d6bfd0eaf66425a2d714141ec88348cfa9a
-}
-
-.tagBox{
-    background-color: #fff;
-    border-radius: 4px;
-    color: #444;
-    display: inline-block;
-    font-size: 15px;
-    padding: 0px 4px;
-    margin: 2px;
-}
-.submitBtn{
-    width: fit-content; 
-<<<<<<< HEAD
-    background-color: white;
-=======
->>>>>>> 0a118d6bfd0eaf66425a2d714141ec88348cfa9a
-}
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: 3px solid white; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: transparent; 
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 5px; /* Some padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
