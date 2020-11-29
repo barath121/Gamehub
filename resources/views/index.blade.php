@@ -2,11 +2,10 @@
 
 @section('body')
 
-<div class="navbar navbar-expand-sm navbar-dark sticky-top m-2 no-gutters" style="top: 66px; background: #121212">
+<div class="navbar navbar-expand-sm navbar-dark m-2">
     <div class="container">
           <div class="navbar-nav">
             <a class="nav-link small d-inline-block" href="#">Discover</a>
-            {{-- <a class="nav-link small d-inline-block" href="#">Browse</a> --}}
           </div>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control-sm mr-sm-2" type="search" placeholder="Search">
