@@ -86,12 +86,19 @@ class Games extends Controller
     return view('create_game');
   }
  
-  public function getImages(Request $request){
+  public function getGameData(Request $request){
+    $game =  (object) array();
+    $game = Game::where('id',"=", $request->game_id)->first();
+    $images = "";
+    if($game)
     $images = Image::where('game_id',"=", $request->game_id)->get();
+    if($game)
+    $user = User::where('id','=',$game->user_id)->first();
     $res = (object) array();
     $res->status = "Sucessful";
-    $res->imagedetails = $images;
+    $res->gamedata = $game;
+    $res->images = $images;
     return response()->json($res, 201);
   }
-
+  
 }
