@@ -15,9 +15,7 @@ use App\Http\Controllers\Users;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [Games::class, 'homepage']);
 
 //Game
 Route::post('/creategame',[Games::class, 'creategame']);

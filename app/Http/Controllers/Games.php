@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Game;
+use App\Models\User;
 use App\Models\Image;
 use Illuminate\Support\Facades\Storage;
 use \Firebase\JWT\JWT;
 use Cookie;
+use Carbon\Carbon;
 class Games extends Controller
 {
     public function gameupload(Request $request){
@@ -101,9 +103,28 @@ class Games extends Controller
     return view('uploads');
   }
   public function gamedetails(Request $request){
-    return view('Game_details');
-  }
+  $game = Game::where('id',"=", $request->game_id)->first();
+  $user = User::where('id', '=', $game->user_id)->first();
+  $images = Image::where('game_id','=',$request->game_id)->get();  
+
+    return view('Game_details',[
+      'game' => $game,
+      'user'=>$user,
+      'images' => $images
+    ]);  }
   public function uploadgameview(Request $request){
     return view('uploads');
+  }
+  public function homepage(Request $request){
+    $latest_games = Game::join('users', 'games.user_id', '=', 'users.id')
+                    ->latest('games.created_at')                    
+                    ->paginate(4);
+    $games = Game::join('users', 'games.user_id', '=', 'users.id')
+                  ->inRandomOrder()
+                  ->paginate(8);
+    return view('index',[
+        'latest_games' => $latest_games,
+        'games' => $games
+    ]);
   }
 }

@@ -9,7 +9,7 @@
                 >
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-interval="5000">
-                        <iframe class="car" src="https://www.youtube.com/embed/mqh4BX8-VR4"
+                        <iframe class="car" src={{$game->yt_video}}
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -44,13 +44,13 @@
                     <img src="{{URL::asset('images/img.webp')}}" height="200px" alt="">
                 </div>
                 <div class="col-lg-6 col-12 text-center">
-                    <h1 class="mb-2">WatchDogs</h1>
-                    <p class="text-muted">Published:- <span class="text-white"> Kamlesh</span></p>
-                    <p class="text-muted">Email:- <span class="text-white"> Kamlesh@gmail.com</span></p>
-                    <p class="text-muted">Tags:- <span class="text-white"> HORROR,ADVENTURE</span></p>
+                    <h1 class="mb-2">{{$game->title}}</h1>
+                    <p class="text-muted">Published:- <span class="text-white"> {{$user->name}}</span></p>
+                    <p class="text-muted">Email:- <span class="text-white">{{$user->email}}</span></p>
+                    <p class="text-muted">Tags:- <span class="text-white">{{$game->tags}}</span></p>
                 </div>
                 <div class="col-lg-3 col-12 d-flex align-items-center justify-content-center">
-                    <a href="#top" target="_blank"><button class="btn btn-lg btn-success text-white"><i class="fa fa-play"></i> Play</button></a>
+                    <a href="{{$game->play_link}}" target="_blank"><button class="btn btn-lg btn-success text-white"><i class="fa fa-play"></i> Play</button></a>
                 </div>
             </div>
         </div>
@@ -61,11 +61,7 @@
                     <h5>About The Game</h5>
                 </div>
                 <div class="col-lg-8 col-12">
-                    <p style="font-weight: 100;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, ea officiis minus
-                        necessitatibus perferendis earum sint? Aliquid, explicabo. Nulla, voluptatum esse consequuntur
-                        vel ullam blanditiis possimus consectetur molestias voluptate soluta iure omnis a at beatae
-                        sapiente, voluptas cum sit, quis provident reiciendis. Animi nisi vel exercitationem recusandae
-                        odio minus aliquam?
+                    <p style="font-weight: 100;">{{$game->description}}
                     </p>
                 </div>
             </div>
