@@ -41,10 +41,7 @@ class Games extends Controller
         $res = (object) array();
         $res->status = "Sucessful";
         $res->play_link = Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$html->getClientOriginalName());
-        return response()->json($res, 201);
-        // Storage::disk(env('FILESYSTEM_DRIVER'))->deleteDirectory('barath');
-        // return "DOne";
-
+        return redirect('/');
       }
   public function creategame(Request $request){
     $userid = JWT::decode(request()->cookie('JWT'),env('JWT_SECRET'),array('HS256'));

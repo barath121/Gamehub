@@ -8,17 +8,19 @@
             <h6 class="row justify-content-center text-muted">Upload game related files</h6>
         </div>
         <hr>
-        <form  action="/uploadgame" method="POST">
+        <form enctype="multipart/form-data" action="/uploadgame" method="POST" >
             <div class="row no-gutters justify-content-center ">
                 <div class="col-lg-10 col-12 pl-1 pr-1">
-                <input type="hidden" name="game_id">
+                @if(request()->get('game_id'))
+                    <input type="hidden" name="game_id" value={{request()->get('game_id') }}>
+                @endif
                     <div class="row no-gutters">
                         <div class="col-lg-8 col-12">
                             <div class="row no-gutters">
                                 <p class="InputLabel">Build Files</p>
                             </div>
                             <div class="row no-gutters mb-1">
-                                <input type="file" name="Build" multiple>
+                                <input type="file" name="build" multiple class="form-control-file">
                             </div>
                             <div class="row no-gutters mb-3">
                                 <small class="text-muted">*Upload Build Files</small>
@@ -27,7 +29,7 @@
                                 <p class="InputLabel">Template Files</p>
                             </div>
                             <div class="row no-gutters mb-1">
-                                <input type="file" name="template" multiple>
+                                <input type="file" name="template" multiple class="form-control-file">
                             </div>
                             <div class="row no-gutters mb-3">
                                 <small class="text-muted">*Upload Template Files</small>
@@ -36,7 +38,7 @@
                                 <p class="InputLabel">Html files</p>
                             </div>
                             <div class="row no-gutters mb-1">
-                                <input type="file" name="html" accept=".html" multiple>
+                                <input type="file" name="html" accept=".html" multiple class="form-control-file"> 
                             </div>
                             <div class="row no-gutters mb-3">
                                 <small class="text-muted">*Upload HTML files</small>
@@ -45,7 +47,7 @@
                                 <p class="InputLabel">Preview Images</p>
                             </div>
                             <div class="row no-gutters mb-1">
-                                <input type="file" name="image" accept=".jpeg,.png,.jpg" multiple>
+                                <input type="file" name="image" accept=".jpeg,.png,.jpg" multiple class="form-control-file">
                             </div>
                             <div class="row no-gutters mb-3">
                                 <small class="text-muted">*Upload multiple images</small>
@@ -54,13 +56,13 @@
                                 <p class="InputLabel">Game Icon</p>
                             </div>
                             <div class="row no-gutters mb-1">
-                                <input type="file" name="icon" onchange='loadFile(event)' accept=".jpeg,.png,.jpg">
+                                <input type="file" name="icon" onchange='loadFile(event)' accept=".jpeg,.png,.jpg,.webp" class="form-control-file">
                             </div>
                             <div class="row no-gutters mb-3">
                                 <small class="text-muted">*For vest results upload 640 x 854 px image</small>
                             </div>
                             <div class="row no-gutters mb-3">
-                                <button class="btn btn-dark" type="button">SUBMIT</button>
+                                <button class="btn btn-dark" type="submit" >SUBMIT</button>
                             </div>
                         </div>
                         <div class="col-lg-4 col-12">
@@ -83,7 +85,7 @@
         var image = document.getElementById('output');
         image.src = URL.createObjectURL(event.target.files[0]);
     };
-
+    
 </script>
 
 @endsection
