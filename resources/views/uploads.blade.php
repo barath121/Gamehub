@@ -8,7 +8,7 @@
             <h6 class="row justify-content-center text-muted">Upload game related files</h6>
         </div>
         <hr>
-        <form enctype="multipart/form-data" action="/uploadgame" method="POST" >
+        <form id="uploadform" enctype="multipart/form-data" action="/uploadgame" method="POST" >
             <div class="row no-gutters justify-content-center ">
                 <div class="col-lg-10 col-12 pl-1 pr-1">
                 @if(request()->get('game_id'))
@@ -85,7 +85,8 @@
         var image = document.getElementById('output');
         image.src = URL.createObjectURL(event.target.files[0]);
     };
-    
+
+</script>
 </script>
 
 @endsection

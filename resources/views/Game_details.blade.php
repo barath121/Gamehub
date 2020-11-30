@@ -15,15 +15,15 @@
                             allowfullscreen></iframe>
                     </div>
                     <div class="carousel-item" data-interval="2000">
-                        <img src="{{URL::asset('images/gImg1.jpg')}}"
+                        <img src="{{$images[0]->image_link}}"
                             class="car" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{URL::asset('images/gImg2.jpg')}}"
+                        <img src="{{$images[1]->image_link}}"
                             class="car" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{URL::asset('images/gImg3.jpg')}}"
+                        <img src="{{$images[2]->image_link}}"
                             class="car" alt="...">
                     </div>
                 </div>

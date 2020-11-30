@@ -43,6 +43,7 @@ class Games extends Controller
         $res = (object) array();
         $res->status = "Sucessful";
         $res->play_link = Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$html->getClientOriginalName());
+        sleep(15);
         return redirect('/');
       }
   public function creategame(Request $request){
