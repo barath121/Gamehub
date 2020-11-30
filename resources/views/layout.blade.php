@@ -12,7 +12,7 @@
     <script src="https://use.fontawesome.com/38d6db4b58.js"></script>
 
 </head>
-<body>
+<body onload="removelogin()">
 
     <nav class="navbar navbar-expand-lg navbar-dark nopadding sticky-top" style="background-color: #202020;">
         <div class="container">
@@ -28,30 +28,28 @@
                 <li class="nav-item">
                   <a class="nav-link small font-weight-bold" href="/newgame">Add Game</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link small font-weight-bold" href="/dashboard">Dashboard</a>
-                </li>
-                <li class="nav-item">
+                <li class="nav-item" id="userlogin">
                   <a class="nav-link small font-weight-bold" href="/login">Login</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" id="userlogout">
                   <a class="nav-link dropdown-toggle small font-weight-bold" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     User
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item small" href="#">Logout</a>
+                    <a class="dropdown-item small" href="/dashboard">Dashboard</a>
+                    <a class="dropdown-item small" href="/logout" onclick="noforward(event)">Logout</a>
                   </div>
                 </li>
               </ul>
             </div>
             
-            <div class="collapse navbar-collapse d-sm-block d-none" id="navbarSupportedContent">
+            <!-- <div class="collapse navbar-collapse d-sm-block d-none" id="navbarSupportedContent">
                 <div class="ml-auto">
-                  <form class="form-inline">
-                    <input class="form-control-sm text-muted" type="search" placeholder="Search">
+                  <form class="form-inline" action="/search" method="get">
+                    <input class="form-control-sm text-muted" name="search_string" type="search" placeholder="Search">
                   </form>
                 </div>
-            </div>
+            </div> -->
         
             </div>
     </nav>
@@ -153,7 +151,16 @@
           mybutton.style.display = "none";
         }
       }
-
+      function removelogin(){
+      var match = document.cookie.match(new RegExp('(^| )' + "user_is_login" + '=([^;]+)'));
+      if (match) {
+       document.getElementById("userlogin").remove();  
+      }
+      else{
+        document.getElementById("userlogout").remove();  
+      }
+      }
+      
       // When the user clicks on the button, scroll to the top of the document
       function topFunction() {
         document.body.scrollTop = 0; // For Safari

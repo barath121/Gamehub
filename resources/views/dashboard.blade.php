@@ -12,8 +12,8 @@
                     <p class="text-light h6 text-sm-left text-center">Profile</p> <hr class="bg-light">
                         <div class="row">
                         <div class="col-sm-4 col-12 mb-3 text-sm-left text-center">
-                            <div class="text-white small">Username: <span class="text-muted font-weight-bold">Joker</span></div>
-                            <div class="text-white small">Email: <span class="text-muted font-weight-bold">Joker@123</span></div>
+                            <div class="text-white small">Username: <span class="text-muted font-weight-bold">{{$user->name}}</span></div>
+                            <div class="text-white small">Email: <span class="text-muted font-weight-bold">{{$user->email}}</span></div>
                         </div>
                         <div class="col-sm-7 col-12 text-sm-left text-center">
                             <p class="text-white small">About:</p> 
@@ -31,31 +31,12 @@
         <div class="d-flex flex-column justify-content-center text-center bg-dark rounded p-3">
             <p class="text-light h5">Added Games</p> <hr>
             <div class="row">
+                @foreach($games as $game)
                 <div class="col-lg-3 col-md-6 col-6">
-                    <img class="cover p-1" src="{{URL::asset('images/img.webp')}}" alt="">
-                    <div class="small text-white">Watch Dogs: Legion</div>
+                    <img class="cover p-1" src="{{$game->icon}}" alt="">
+                    <div class="small text-white">{{$game->title}}</div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <img class="cover p-1" src="{{URL::asset('images/img.webp')}}" alt="">
-                    <div class="small text-white">Watch Dogs: Legion</div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <img class="cover p-1" src="{{URL::asset('images/img.webp')}}" alt="">
-                    <div class="small text-white">Watch Dogs: Legion</div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <img class="cover p-1" src="{{URL::asset('images/img.webp')}}" alt="">
-                    <div class="small text-white">Watch Dogs: Legion</div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <img class="cover p-1" src="{{URL::asset('images/img.webp')}}" alt="">
-                    <div class="small text-white">Watch Dogs: Legion</div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6">
-                    <img class="cover p-1" src="{{URL::asset('images/img.webp')}}" alt="">
-                    <div class="small text-white">Watch Dogs: Legion</div>
-                </div>
-                
+                @endforeach
             </div>
         </div>
     </div>

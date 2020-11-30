@@ -32,6 +32,7 @@ class Users extends Controller
         if($user->password == $password){
         $jwt = JWT::encode($user->id,env('JWT_SECRET'));    
         Cookie::queue('JWT', $jwt, 11000);
+        Cookie::queue('user_is_login', true, 11000, null, null, false, false);
         return redirect('/');
         // return  response()->json($user);
         }
@@ -42,11 +43,11 @@ class Users extends Controller
         $userid = JWT::decode(request()->cookie('JWT'),env('JWT_SECRET'),array('HS256'));
         $user = User::where('id','=',$userid)->first();
         $games_owned = Game::where('user_id','=',$userid)->get();
-        $res = (object) array();
-        $res->status = "Sucessful";
-        $res->user_details = $user;
-        $res->game_details = $games_owned;
-        return view('dashboard');
+       
+        return view('dashboard',[
+            "user" => $user,
+            "games" => $games_owned
+        ]);
         // return response()->json($res, 201);
     }
     public function loginview(Request $request){
@@ -65,11 +66,12 @@ class Users extends Controller
     public function registerview(Request $request){
         return view('register');
     }
-     // public function logout(Request $request){
-    //     setcookie("JWT", "", time() - 3600);
-    //     $res = (object) array();
-    //     $res->status = "Sucessful";
-    //     $res->message = "Logout Sucessful";
-    //     return response()->json($res, 201);
-    // }
+     public function logout(Request $request){
+        setcookie("JWT", "", time() - 3600);
+        setcookie("user_is_login", "", time() - 3600);
+        $res = (object) array();
+        $res->status = "Sucessful";
+        $res->message = "Logout Sucessful";
+        return redirect('/');
+    }
 }

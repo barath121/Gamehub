@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-12 d-flex align-items-center justify-content-center">
-                    <a href="#top" target="_blank"><button class="btn btn-lg btn-outline-success text-white"><i class="fa fa-play"></i> Play</button></a>
+                    <a href="{{$game->play_link}}" target="_blank"><button class="btn btn-lg btn-outline-success text-white"><i class="fa fa-play"></i> Play</button></a>
                 </div>
             </div>
         </div>
