@@ -46,7 +46,8 @@ class Users extends Controller
         $res->status = "Sucessful";
         $res->user_details = $user;
         $res->game_details = $games_owned;
-        return response()->json($res, 201);
+        return view('dashboard');
+        // return response()->json($res, 201);
     }
     public function loginview(Request $request){
         return view('login');
@@ -57,7 +58,7 @@ class Users extends Controller
         Storage::disk(env('FILESYSTEM_DRIVER'))->put('profilepics/'. $profile_pic_file->getClientOriginalName(),file_get_contents($profile_pic_file));
         User::where('id','=',$userid)->update(['profile_pic'=>Storage::disk(env('FILESYSTEM_DRIVER'))->url('profilepics/'. $profile_pic_file->getClientOriginalName())]);
         $res = (object) array();
-        $res->status = "Sucessful";
+        $res->status = "Sucessfull";
         $res->user_details = User::where('id','=',$userid)->first();
         return response()->json($res, 201);
     }

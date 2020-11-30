@@ -61,5 +61,8 @@ a {
     .car{
     width:100%; 
     height: 300px !important;
-}
+    }
+    .nav-link:hover {
+        transform: scale(1);
+    }
 }

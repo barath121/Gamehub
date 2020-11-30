@@ -2,19 +2,16 @@
 
 @section('body')
 
-<div class="navbar navbar-expand-sm navbar-dark m-2">
+<div class="mb-3">
     <div class="container">
-          <div class="navbar-nav">
-            <a class="nav-link small d-inline-block" href="#">Latest Games</a>
-          </div>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control-sm mr-sm-2" type="search" placeholder="Search">
-          </form>
+        <a href="#latest" class="d-inline-block text-muted ml-2 small font-weight-bold">Discover</a>
+        <a href="#discover" class="d-inline-block text-muted ml-2 small font-weight-bold">Latest</a>
     </div>
 </div>
 
 <section id="latest">
     <div class="container">
+        <p class="h6 text-light text-center">LATEST</p>
         <div class="row">
         @if($latest_games->count())
             @foreach($latest_games as $game)
@@ -34,7 +31,6 @@
                     <br><br>
                     <div class="small text-white">Watch Dogs: Legion</div>
                     <div class="small text-muted">XYZ</div>
-                    <div class="text-white">₹ 0000.0</div>
                 </a>
             </div>
         @endif    
@@ -42,16 +38,9 @@
     </div>
 </section>
 
-<div class="navbar navbar-expand-sm navbar-dark m-2">
-    <div class="container">
-          <div class="navbar-nav">
-            <a class="nav-link small d-inline-block" href="#">Discover</a>
-          </div>
-    </div>
-</div>
-
 <section id="discover">
     <div class="container">
+        <p class="h6 text-light text-center">DISCOVER</p>
         <div class="row">
         @if($games->count())
             @foreach($games as $game)
@@ -71,7 +60,6 @@
                     <br><br>
                     <div class="small text-white">Watch Dogs: Legion</div>
                     <div class="small text-muted">XYZ</div>
-                    <div class="text-white">₹ 0000.0</div>
                 </a>
             </div>
         @endif    

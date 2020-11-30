@@ -35,4 +35,4 @@ Route::get('/login',[Users::class, 'loginview']);
 Route::get('/uploadView',[Games::class, 'uploadView']);
 Route::get('/logout',[Users::class, 'logout']);
 Route::post('/login',[Users::class, 'login']);
-Route::get('/userdetails',[Users::class, 'getuserdetails']);
+Route::get('/dashboard',[Users::class, 'getuserdetails']);

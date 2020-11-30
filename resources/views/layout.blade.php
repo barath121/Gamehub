@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHub | Home</title>
+    <title>GameHub</title>
 
     <!-- StyleSheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -16,48 +16,67 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark nopadding sticky-top" style="background-color: #202020;">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="{{URL::asset('images/logo.png')}}" alt="" style="width: 100px;"></a>
-            <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="/"><img src="{{URL::asset('images/logo.png')}}" alt="" style="width: 100px;"></a>
+            <button class="navbar-toggler btn btn-sm btn-outline-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent"  style="transition: 0.7s">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link small" href="/">Store</a>
+                  <a class="nav-link small font-weight-bold" href="/">Store</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link small" href="/newgame">Add Game</a>
+                  <a class="nav-link small font-weight-bold" href="/newgame">Add Game</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link small" href="#">Dashboard</a>
+                    <a class="nav-link small font-weight-bold" href="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link small font-weight-bold" href="/login">Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle small font-weight-bold" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    User
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item small" href="#">Logout</a>
+                  </div>
                 </li>
               </ul>
             </div>
-    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                      <a class="nav-link small" href="/login">Login</a>
-                    </li>
-                </ul>
-              </div>
-        </div>
+            
+            <div class="collapse navbar-collapse d-sm-block d-none" id="navbarSupportedContent">
+                <div class="ml-auto">
+                  <form class="form-inline">
+                    <input class="form-control-sm text-muted" type="search" placeholder="Search">
+                  </form>
+                </div>
+            </div>
+        
+            </div>
     </nav>
+
+    <div class="d-flex justify-content-center p-2">
+      <form class="form-inline">
+        <input class="form-control-sm d-sm-none d-block text-muted text-center rounded" type="search" placeholder="Search">
+      </form>
+    </div>
+
     @yield('body')
 
     <footer id="footer" style="background-color: #202020;">
       <div class="container pt-3">
         <div>
           <img class="bg-dark p-1 rounded" width="38px" src="https://image.flaticon.com/icons/png/512/23/23730.png" alt="">
-          <img class="bg-dark p-1 rounded" width="95px" src="https://discord.com/assets/bb408e0343ddedc0967f246f7e89cebf.svg" alt="">
+          <img class="bg-dark p-1 rounded" width="38px" src="https://discord.com/assets/41484d92c876f76b20c7f746221e8151.svg" alt="">
           <img  class="bg-dark p-1 rounded" width="38px" src="https://image.flaticon.com/icons/png/512/9/9996.png" alt="">
           <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
         </div>
         <br>
         <div class="">
-          <p class="text-muted small font-weight-bold">Resources</p>
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 mb-3">
+              <p class="text-muted small font-weight-bold">Resources</p>
               <div class="row">
                 <div class="col-4">
                   <div class="small text-light font-weight-bold mb-2">Backend</div>
@@ -76,6 +95,38 @@
                 <div class="col-4">
                   <div class="small text-light font-weight-bold mb-2">Database</div>
                   <div class="small text-light">MySQL</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted small font-weight-bold">Developers</p>
+              <div class="row">
+                <div class="col-4">
+                  <p class="text-light font-weight-bold">Aftab Mansoori</p>
+                  <a href="">
+                    <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/1384/1384030.svg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/25/25657.svg" alt="">
+                  </a>
+                </div>
+                <div class="col-4">
+                  <p class="text-light font-weight-bold">Barath Nadar</p>
+                  <a href="">
+                    <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/1384/1384030.svg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/25/25657.svg" alt="">
+                  </a>
+                </div>
+                <div class="col-4">
+                  <p class="text-light font-weight-bold">Nimesh Nair</p>
+                  <a href="">
+                    <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/1384/1384030.svg" alt="">
+                  </a>
+                  <a href="">
+                    <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/25/25657.svg" alt="">
+                  </a>
                 </div>
               </div>
             </div>
