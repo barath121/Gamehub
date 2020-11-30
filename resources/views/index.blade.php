@@ -56,7 +56,7 @@
         @if($games->count())
             @foreach($games as $game)
             <div class="col-lg-3 col-md-6 col-6 p-3">
-                <a href="/gamedetails?game_id="+{{$game->id}}>
+                <a href="/gamedetails?game_id={{$game->id}}">
                     <img class="cover" src="{{$game->icon}}" alt=""> 
                     <br><br>
                     <div class="small text-white">{{$game->title}}</div>
