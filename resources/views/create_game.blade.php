@@ -138,11 +138,11 @@
         })
             .then(function (response) {
                 console.log("done")
-                window.href = "/uploadView"
                 return response.json();
             })
             .then(function (data) {
                 console.log(data)
+                window.location.href = `/uploadView?game_id=${data.gamedetails.id}`
             });
     }
 

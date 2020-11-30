@@ -12,7 +12,7 @@ class Games extends Controller
 {
     public function gameupload(Request $request){
         $data = $request->input();
-        $game_id = $data["game_id"];
+        $game_id = $request->game_id;
         $game_details = Game::where('id','=',$game_id)->first();
         $html = $request->file('html');
         $html_converted = file_get_contents($html);

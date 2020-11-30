@@ -8,9 +8,10 @@
             <h6 class="row justify-content-center text-muted">Upload game related files</h6>
         </div>
         <hr>
-        <form id="form1">
+        <form  action="/uploadgame" method="POST">
             <div class="row no-gutters justify-content-center ">
                 <div class="col-lg-10 col-12 pl-1 pr-1">
+                <input type="hidden" name="game_id">
                     <div class="row no-gutters">
                         <div class="col-lg-8 col-12">
                             <div class="row no-gutters">
@@ -76,4 +77,13 @@
 
     </div>
 </div>
+<script>
+
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+</script>
+
 @endsection
