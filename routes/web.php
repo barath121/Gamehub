@@ -27,6 +27,8 @@ Route::get('/searchgame',[Games::class, 'searchgames']);
 Route::get('/getgame',[Games::class, 'getGameData']);
 Route::get('/gamedetails',[Games::class, 'gamedetails']);
 Route::get('/newgame',[Games::class, 'creategameview']);
+Route::get('/uploadgame',[Games::class, 'uploadgameview']);
+
 //User
 Route::get('/register',[Users::class, 'registerview']);
 Route::post('/profilepic',[Users::class, 'profilepicchange']);

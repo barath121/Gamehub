@@ -10,15 +10,15 @@
             </div> <br>
             <div class="form-group">
               <label class="text-white small" for="title">Title</label>
-              <input type="email" class="form-control" name="title" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
+              <input class="form-control" name="title" id="title" placeholder="Email" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
                 <label class="text-white small" for="title">Description</label>
-                <textarea class="form-control" name="description" type="description" placeholder = "Description" rows="5"></textarea>
+                <textarea class="form-control" name="description" id="description" type="description" placeholder = "Description" rows="5"></textarea>
             </div>
             <div class="form-group">
                 <label class="text-white small" for="title">Youtube Video Link</label>
-                <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
+                <input type="text" class="form-control" name="yt_video" id="yt_video" placeholder="Email" aria-describedby="emailHelp">
             </div>
 
             <div class="form-group">
@@ -120,11 +120,17 @@
 
     function createGame() {
 
-        var data = new FormData(document.getElementById('form1'));
-        data.delete("tags")
-        data.set("tags",tags_string);
-        console.log("data", data)
-        
+        // var data = new FormData(document.getElementById('form1'));
+        // data.delete("tags")
+        // data.set("tags",tags_string);
+        // console.log("data", data)
+        var data = {};
+        console.log(document.getElementById('title'))
+        data.title = document.getElementById('title').value;
+        data.description = document.getElementById('description').value;
+        data.yt_video = document.getElementById('yt_video').value;
+        data.tags = tags_string;
+        console.log(data)
         fetch("http://localhost:8000/creategame", {
             method: "POST",
             headers: headers,

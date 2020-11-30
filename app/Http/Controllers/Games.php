@@ -106,4 +106,7 @@ class Games extends Controller
   public function gamedetails(Request $request){
     return view('Game_details');
   }
+  public function uploadgameview(Request $request){
+    return view('uploads');
+  }
 }
