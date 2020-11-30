@@ -37,24 +37,26 @@
                 </a>
             </div>
         </div>
-
+        {{-- <hr class="bg-dark"> --}}
         <div class="text-white box rounded p-3 mb-4" id="Game">
             <div class="row no-gutters">
-                <div class="col-lg-3 col-12 text-center">
+                <div class="col-lg-3 col-12 bg-dark p-2 rounded text-center">
                     <img src="{{URL::asset('images/img.webp')}}" height="200px" alt="">
                 </div>
-                <div class="col-lg-6 col-12 text-center">
-                    <h1 class="mb-2">WatchDogs</h1>
-                    <p class="text-muted">Published:- <span class="text-white"> Kamlesh</span></p>
-                    <p class="text-muted">Email:- <span class="text-white"> Kamlesh@gmail.com</span></p>
-                    <p class="text-muted">Tags:- <span class="text-white"> HORROR,ADVENTURE</span></p>
+                <div class="col-lg-6 col-12 text-center d-flex flex-column justify-content-center">
+                    <div class="p-3">
+                        <h3 class="mb-2">WatchDogs</h3> <br>    
+                        <div class="text-muted">Published: <span class="text-white"> Kamlesh</span></div>
+                        <div class="text-muted">Email: <span class="text-white"> Kamlesh@gmail.com</span></div>
+                        <div class="text-muted">Tags: <span class="text-white"> HORROR,ADVENTURE</span></div>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-12 d-flex align-items-center justify-content-center">
-                    <a href="#top" target="_blank"><button class="btn btn-lg btn-success text-white"><i class="fa fa-play"></i> Play</button></a>
+                    <a href="#top" target="_blank"><button class="btn btn-lg btn-outline-success text-white"><i class="fa fa-play"></i> Play</button></a>
                 </div>
             </div>
         </div>
-
+        <hr class="bg-dark">
         <div class="text-white box p-4 mb-4" id="Game">
             <div class="row no-gutters">
                 <div class="col-lg-4 col-12">
