@@ -6,7 +6,7 @@
     <div class="d-flex justify-content-center p-3">
         <form class="rounded p-4 mt-5 mb-5"  style="background-color: #202020;">
             <div class="text-center">
-              <h2 class="text-white">Create a New Project</h2>
+              <h2 class="text-white Do">Create a New Project</h2>
             </div> <br>
             <div class="form-group">
               <label class="text-white small" for="title">Title</label>

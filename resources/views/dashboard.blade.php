@@ -9,7 +9,7 @@
                     <img class="rounded shadow " width="200px" height="250px"  src="{{$user->profile_pic}}" alt="{{URL::asset('images/1.jpg')}}">
                 </div> 
                 <div class="col-sm-9 col-12">
-                    <p class="text-light h6 text-sm-left text-center">Profile</p> <hr class="bg-light">
+                    <p class="text-light h6 text-sm-left text-center Do">Profile</p> <hr class="bg-light">
                         <div class="row">
                         <div class="col-sm-4 col-12 mb-3 text-sm-left text-center">
                             <div class="text-white small">Username: <span class="text-muted font-weight-bold">{{$user->name}}</span></div>
@@ -29,7 +29,7 @@
 <section class="mb-5 mt-5" id="addedGames">
     <div class="container">
         <div class="d-flex flex-column justify-content-center text-center bg-dark rounded p-3">
-            <p class="text-light h5">Added Games</p> <hr>
+            <p class="text-light h5 Do">Added Games</p> <hr>
             <div class="row">
             @if($games->count())
                 @foreach($games as $game)

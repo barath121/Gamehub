@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-lg-6 col-12 text-center d-flex flex-column justify-content-center">
                     <div class="p-3">
-                        <h3 class="mb-2">{{$game->title}}</h3> <br>    
+                        <h3 class="mb-2 Do">{{$game->title}}</h3> <br>    
                         <div class="text-muted">Published: <span class="text-white"> {{$user->name}}</span></div>
                         <div class="text-muted">Email: <span class="text-white"> {{$user->email}}</span></div>
                         <div class="text-muted">Tags: <span class="text-white"> {{$game->tags}}</span></div>
@@ -59,7 +59,7 @@
         <div class="text-white box p-4 mb-4" id="Game">
             <div class="row no-gutters">
                 <div class="col-lg-4 col-12">
-                    <h5>About The Game</h5>
+                    <h5 class="Do">About The Game</h5>
                 </div>
                 <div class="col-lg-8 col-12">
                     <p style="font-weight: 100;">{{$game->description}}

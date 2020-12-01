@@ -11,15 +11,15 @@
 
 <section id="latest">
     <div class="container">
-        <p class="h6 text-light text-center">LATEST</p>
+        <p class="h6 text-light text-center Do">LATEST</p>
         <div class="row">
         @if($latest_games->count())
             @foreach($latest_games as $game)
             <div class="col-lg-3 col-md-6 col-6 p-3">
                 <a href="/gamedetails?game_id={{$game->id}}">
-                    <img class="cover" src="{{$game->icon}}" alt="" height="280.6px"> 
+                    <img class="cover" src="{{$game->icon}}" alt=""> 
                     <br><br>
-                    <div class="small text-white">{{$game->title}}</div>
+                    <div class="small text-white Do">{{$game->title}}</div>
                     <div class="small text-muted">{{$game->name}}</div>
                 </a>
             </div>
@@ -29,7 +29,7 @@
                 <a href="/gamedetails">
                     <img class="cover" src="{{URL::asset('images/img.webp')}}" alt="">
                     <br><br>
-                    <div class="small text-white">Watch Dogs: Legion</div>
+                    <div class="small text-white Do">Watch Dogs: Legion</div>
                     <div class="small text-muted">XYZ</div>
                 </a>
             </div>
@@ -40,7 +40,7 @@
 
 <section id="discover">
     <div class="container">
-        <p class="h6 text-light text-center">DISCOVER</p>
+        <p class="h6 text-light text-center Do">DISCOVER</p>
         <div class="row">
         @if($games->count())
             @foreach($games as $game)
@@ -48,7 +48,7 @@
                 <a href="/gamedetails?game_id={{$game->id}}">
                     <img class="cover" src="{{$game->icon}}" alt="" height="280.6"> 
                     <br><br>
-                    <div class="small text-white">{{$game->title}}</div>
+                    <div class="small text-white Do">{{$game->title}}</div>
                     <div class="small text-muted">{{$game->name}}</div>
                 </a>
             </div>
