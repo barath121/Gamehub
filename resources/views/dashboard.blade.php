@@ -6,7 +6,7 @@
         <div class="d-flex flex-column justify-content-center bg-dark rounded p-3">
             <div class="row">
                 <div class="col-sm-3 col-12 mb-3 text-center">
-                    <img class="rounded shadow " width="200px" height="250px" src="{{URL::asset('images/1.jpg')}}" alt="">
+                    <img class="rounded shadow " width="200px" height="250px"  src="{{URL::asset('images/1.jpg')}}">
                 </div> 
                 <div class="col-sm-9 col-12">
                     <p class="text-light h6 text-sm-left text-center">Profile</p> <hr class="bg-light">
@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-sm-7 col-12 text-sm-left text-center">
                             <p class="text-white small">About:</p> 
-                            <div class="text-muted small">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit laborum facere voluptate ducimus nihil, impedit illum explicabo a illo voluptas quis iste optio non quia veniam qui eaque sequi quos!</div>
+                            <div class="text-muted small">{{$user->about}}</div>
                         </div>
                     </div>
                 </div>
