@@ -43,7 +43,6 @@ class Games extends Controller
         $res = (object) array();
         $res->status = "Sucessful";
         $res->play_link = Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$html->getClientOriginalName());
-        sleep(15);
         return redirect('/');
       }
   public function creategame(Request $request){
@@ -118,10 +117,12 @@ class Games extends Controller
   }
   public function homepage(Request $request){
     $latest_games = Game::join('users', 'games.user_id', '=', 'users.id')
-                    ->latest('games.created_at')                    
+                    ->latest('games.created_at')   
+                    ->select('users.*', 'games.*')
                     ->paginate(4);
     $games = Game::join('users', 'games.user_id', '=', 'users.id')
                   ->inRandomOrder()
+                  ->select('users.*', 'games.*')
                   ->paginate(8);
     return view('index',[
         'latest_games' => $latest_games,
