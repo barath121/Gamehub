@@ -4,8 +4,8 @@
 
 <div class="mb-3">
     <div class="container">
-        <a href="#latest" class="d-inline-block text-muted ml-2 small font-weight-bold">Discover</a>
-        <a href="#discover" class="d-inline-block text-muted ml-2 small font-weight-bold">Latest</a>
+        <a href="#discover" class="d-inline-block text-muted ml-2 small font-weight-bold">Discover</a>
+        <a href="#latest" class="d-inline-block text-muted ml-2 small font-weight-bold">Latest</a>
     </div>
 </div>
 
