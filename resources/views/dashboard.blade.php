@@ -6,7 +6,7 @@
         <div class="d-flex flex-column justify-content-center bg-dark rounded p-3">
             <div class="row">
                 <div class="col-sm-3 col-12 mb-3 text-center">
-                    <img class="rounded shadow " width="200px" height="250px"  src="{{URL::asset('images/1.jpg')}}">
+                    <img class="rounded shadow " width="200px" height="250px"  src="{{$user->profile_pic}}" alt="{{URL::asset('images/1.jpg')}}">
                 </div> 
                 <div class="col-sm-9 col-12">
                     <p class="text-light h6 text-sm-left text-center">Profile</p> <hr class="bg-light">
@@ -33,12 +33,13 @@
             <div class="row">
             @if($games->count())
                 @foreach($games as $game)
-            <a href="/gamedetails?game_id={{$game->id}}">
-                <div class="col-lg-3 col-md-6 col-6">
+            <div class="col-lg-3 col-md-6 col-6">
+                <a href="/gamedetails?game_id={{$game->id}}"> 
                     <img class="cover p-1" src="{{$game->icon}}" alt="">
                     <div class="small text-white">{{$game->title}}</div>
+                </a>    
                 </div>
-            </a>
+          
                 @endforeach
             @else
             <div class="text-white w-100 d-flex justify-content-center">

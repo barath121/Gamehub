@@ -14,7 +14,8 @@ class Users extends Controller
     $data = $request->input();
     $user->name = $data["name"];
     $user->password=$data["password"];
-    $user->email=$data["email"];
+    $user->email=strtolower($data["email"]);
+    $user->about=$data["about"];
     $profile_pic_file = $request->file('profile_pic');
     if($profile_pic_file){
     Storage::disk(env('FILESYSTEM_DRIVER'))->put('profilepics/'. $profile_pic_file->getClientOriginalName(),file_get_contents($profile_pic_file));
@@ -26,7 +27,7 @@ class Users extends Controller
     }
     public function login(Request $request){
         $data = $request->input();
-        $email = $data["email"];
+        $email = strtolower($data["email"]);
         $password = $data["password"];
         $user = User::where('email','=',$email)->first();
         if($user->password == $password){

@@ -11,8 +11,8 @@
             <input type="text" class="form-control" name="name" placeholder="username" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
-        <label class="text-white small" for="exampleInputPassword2">Description</label>
-            <textarea type="text" class="form-control" name="description" id="exampleInputPassword2" placeholder="Enter something about yourself"></textarea>
+        <label class="text-white small" for="exampleInputPassword2">About</label>
+            <textarea type="text" class="form-control" name="about" id="exampleInputPassword2" placeholder="Enter something about yourself"></textarea>
         </div>
         <div class="form-group">
            <label class="text-white small" for="exampleInputPassword3">Image</label>
