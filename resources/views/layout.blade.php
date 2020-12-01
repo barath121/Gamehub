@@ -26,7 +26,7 @@
                 <li class="nav-item">
                   <a class="nav-link small font-weight-bold" href="/">Store</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="addgame">
                   <a class="nav-link small font-weight-bold" href="/newgame">Add Game</a>
                 </li>
                 <li class="nav-item" id="userlogin">
@@ -156,9 +156,11 @@
       var match = document.cookie.match(new RegExp('(^| )' + "user_is_login" + '=([^;]+)'));
       if (match) {
        document.getElementById("userlogin").remove();  
+       
       }
       else{
         document.getElementById("userlogout").remove();  
+        document.getElementById("addgame").remove();  
       }
       }
       
