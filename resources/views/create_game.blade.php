@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label class="text-white small" for="title">Youtube Video Link</label>
-                <input type="text" class="form-control" name="yt_video" id="yt_video" placeholder="Email" aria-describedby="emailHelp">
+                <input type="text" class="form-control" name="yt_video" id="yt_video" placeholder="Enter the youtube video for your game" aria-describedby="emailHelp">
             </div>
 
             <div class="form-group">

@@ -31,12 +31,20 @@
         <div class="d-flex flex-column justify-content-center text-center bg-dark rounded p-3">
             <p class="text-light h5">Added Games</p> <hr>
             <div class="row">
+            @if($games->count())
                 @foreach($games as $game)
+            <a href="/gamedetails?game_id={{$game->id}}">
                 <div class="col-lg-3 col-md-6 col-6">
                     <img class="cover p-1" src="{{$game->icon}}" alt="">
                     <div class="small text-white">{{$game->title}}</div>
                 </div>
+            </a>
                 @endforeach
+            @else
+            <div class="text-white w-100 d-flex justify-content-center">
+               <h5>No games uploaded yet....</h5> 
+            </div>
+            @endif
             </div>
         </div>
     </div>

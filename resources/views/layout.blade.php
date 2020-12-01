@@ -54,11 +54,11 @@
             </div>
     </nav>
 
-    <div class="d-flex justify-content-center p-2">
+    <!-- <div class="d-flex justify-content-center p-2">
       <form class="form-inline">
         <input class="form-control-sm d-sm-none d-block text-muted text-center rounded" type="search" placeholder="Search">
       </form>
-    </div>
+    </div> -->
 
     @yield('body')
 
