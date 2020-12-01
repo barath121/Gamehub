@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-lg-6 col-12 text-center d-flex flex-column justify-content-center">
                     <div class="p-3">
-                        <h3 class="mb-2">WatchDogs</h3> <br>    
+                        <h3 class="mb-2">{{$game->title}}</h3> <br>    
                         <div class="text-muted">Published: <span class="text-white"> {{$user->name}}</span></div>
                         <div class="text-muted">Email: <span class="text-white"> {{$user->email}}</span></div>
                         <div class="text-muted">Tags: <span class="text-white"> {{$game->tags}}</span></div>

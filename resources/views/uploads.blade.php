@@ -59,7 +59,7 @@
                                 <input type="file" name="icon" onchange='loadFile(event)' accept=".jpeg,.png,.jpg,.webp" class="form-control-file">
                             </div>
                             <div class="row no-gutters mb-3">
-                                <small class="text-muted">*For vest results upload 640 x 854 px image</small>
+                                <small class="text-muted">*For best results upload 640 x 854 px image</small>
                             </div>
                             <div class="row no-gutters mb-3">
                                 <button class="btn btn-dark" type="submit" >SUBMIT</button>

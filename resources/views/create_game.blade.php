@@ -10,7 +10,7 @@
             </div> <br>
             <div class="form-group">
               <label class="text-white small" for="title">Title</label>
-              <input class="form-control" name="title" id="title" placeholder="Email" aria-describedby="emailHelp">
+              <input class="form-control" name="title" id="title" placeholder="Title" aria-describedby="emailHelp">
             </div>
             <div class="form-group">
                 <label class="text-white small" for="title">Description</label>

@@ -17,7 +17,7 @@
             @foreach($latest_games as $game)
             <div class="col-lg-3 col-md-6 col-6 p-3">
                 <a href="/gamedetails?game_id={{$game->id}}">
-                    <img class="cover" src="{{$game->icon}}" alt=""> 
+                    <img class="cover" src="{{$game->icon}}" alt="" height="280.6px"> 
                     <br><br>
                     <div class="small text-white">{{$game->title}}</div>
                     <div class="small text-muted">{{$game->name}}</div>
@@ -46,7 +46,7 @@
             @foreach($games as $game)
             <div class="col-lg-3 col-md-6 col-6 p-3">
                 <a href="/gamedetails?game_id={{$game->id}}">
-                    <img class="cover" src="{{$game->icon}}" alt=""> 
+                    <img class="cover" src="{{$game->icon}}" alt="" height="280.6"> 
                     <br><br>
                     <div class="small text-white">{{$game->title}}</div>
                     <div class="small text-muted">{{$game->name}}</div>
