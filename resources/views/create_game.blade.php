@@ -74,7 +74,7 @@
 
     var headers = {
         "Content-Type": "application/json",
-        "Access-Control-Origin": "*"
+        "Access-Control-Allow-Origin": "*"
     }
 
     function addTags() {
@@ -130,12 +130,11 @@
         data.description = document.getElementById('description').value;
         data.yt_video = document.getElementById('yt_video').value;
         data.tags = tags_string;
-        console.log(data)
-        fetch("http://localhost:8000/creategame", {
+        fetch("/creategame", {
             method: "POST",
             headers: headers,
             body: JSON.stringify(data)
-        })
+            })
             .then(function (response) {
                 console.log("done")
                 return response.json();
@@ -143,7 +142,8 @@
             .then(function (data) {
                 console.log(data)
                 window.location.href = `/uploadView?game_id=${data.gamedetails.id}`
-            });
+            })
+            
     }
 
 </script>

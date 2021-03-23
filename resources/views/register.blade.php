@@ -8,23 +8,23 @@
         </div> <br>
         <div class="form-group">
             <label class="text-white small" for="username">Username</label>
-            <input type="text" class="form-control" name="name" placeholder="username" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="name" placeholder="username" aria-describedby="emailHelp" required>
         </div>
         <div class="form-group">
         <label class="text-white small" for="exampleInputPassword2">About</label>
-            <textarea type="text" class="form-control" name="about" id="exampleInputPassword2" placeholder="Enter something about yourself"></textarea>
+            <textarea type="text" class="form-control" name="about" id="exampleInputPassword2" placeholder="Enter something about yourself" required></textarea>
         </div>
         <div class="form-group">
            <label class="text-white small" for="exampleInputPassword3">Image</label>
-           <input type="file" id= "exampleInputPassword3" name="profile_pic" accept=".jpeg,.png,.jpg,.webp" class="form-control-file">
+           <input type="file" id= "exampleInputPassword3" name="profile_pic" accept=".jpeg,.png,.jpg,.webp" class="form-control-file" >
         </div>
         <div class="form-group">
             <label class="text-white small" for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
+            <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp" required>
         </div>
         <div class="form-group">
             <label class="text-white small" for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control" name="password" id="exampleInputPassword1"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  placeholder="Password"  title="Password SHoule Contain atleast one Uppercase,one Lowercase,Number and more than 8 words" required>
         </div>
 
         <button type="submit" class="btn btn-dark w-100 text-center text-white">REGISTER NOW</button>

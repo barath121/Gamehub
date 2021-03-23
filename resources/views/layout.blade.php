@@ -102,28 +102,28 @@
               <div class="row">
                 <div class="col-4">
                   <p class="text-light font-weight-bold">Aftab Mansoori</p>
-                  <a href="">
+                  <a href="https://www.linkedin.com/in/aftab-mansoori-55b4a61a4/">
                     <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/1384/1384030.svg" alt="">
                   </a>
-                  <a href="">
+                  <a href="https://github.com/aftabMansoori">
                     <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/25/25657.svg" alt="">
                   </a>
                 </div>
                 <div class="col-4">
                   <p class="text-light font-weight-bold">Barath Nadar</p>
-                  <a href="">
+                  <a href="https://www.linkedin.com/in/barath-nadar-416405195/">
                     <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/1384/1384030.svg" alt="">
                   </a>
-                  <a href="">
+                  <a href="https://github.com/barath121">
                     <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/25/25657.svg" alt="">
                   </a>
                 </div>
                 <div class="col-4">
                   <p class="text-light font-weight-bold">Nimesh Nair</p>
-                  <a href="">
+                  <a href="https://www.linkedin.com/in/nimesh-nair-67a170191/">
                     <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/1384/1384030.svg" alt="">
                   </a>
-                  <a href="">
+                  <a href="https://github.com/sasukeuzumaki31">
                     <img class="bg-dark p-1 rounded" width="40px" src="https://www.flaticon.com/svg/static/icons/svg/25/25657.svg" alt="">
                   </a>
                 </div>
