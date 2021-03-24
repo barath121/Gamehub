@@ -38,7 +38,7 @@ class Games extends Controller
           Storage::disk(env('FILESYSTEM_DRIVER'))->put('games/'.$game_details->id.'/TemplateData/'. $file->getClientOriginalName(),file_get_contents($file));
         }
         
-        Game::where('id','=',$game_id)->update(['play_link'=>Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$html->getClientOriginalName()),'icon'=>Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$image_icon->getClientOriginalName())]);
+        Game::where('id','=',$game_id)->update(['is_published'=>true,'play_link'=>Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$html->getClientOriginalName()),'icon'=>Storage::disk(env('FILESYSTEM_DRIVER'))->url('games/'.$game_details->id.'/'.$image_icon->getClientOriginalName())]);
 
         $res = (object) array();
         $res->status = "Sucessful";
@@ -52,6 +52,7 @@ class Games extends Controller
     $game->title = $data["title"];
     $game->play_link = "Not Yet Uploaded";
     $game->user_id=$userid;
+    $game->is_published = false;
     $game->description=$data["description"];
     $game->icon="Not Yet Uploaded";
     $game->tags=$data["tags"];
@@ -111,7 +112,8 @@ class Games extends Controller
       'game' => $game,
       'user'=>$user,
       'images' => $images
-    ]);  }
+    ]); 
+ }
   public function uploadgameview(Request $request){
     return view('uploads');
   }

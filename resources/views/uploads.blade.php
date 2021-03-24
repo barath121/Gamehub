@@ -47,7 +47,7 @@
                                 <p class="InputLabel">Preview Images</p>
                             </div>
                             <div class="row no-gutters mb-1">
-                                <input type="file" name="image[]" accept=".jpeg,.png,.jpg" multiple class="form-control-file">
+                                <input type="file" name="image[]" accept=".jpeg,.png,.jpg,.webp" multiple class="form-control-file">
                             </div>
                             <div class="row no-gutters mb-3">
                                 <small class="text-muted">*Upload multiple images</small>
