@@ -6,10 +6,9 @@ Gamehub is a website inspired by the growing love of gaming in our indian commun
 # Technologies Used
 
 - FrontEnd
-  1. HTML
-  2. Blade
-  3. CSS (Bootstrap Framework)
-  4. JavaScript  
+  1. Blade
+  2. Bootstrap Framework
+
 
 - BackEnd
   1. PHP (Laravel Framework) 
