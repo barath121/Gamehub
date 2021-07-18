@@ -6,15 +6,19 @@ Gamehub is a website inspired by the growing love of gaming in our indian commun
 
 # Technologies Used
 
-- FrontEnd
-  1. Blade
-  2. Bootstrap Framework
+### FrontEnd
+  * Blade
+  * Bootstrap Framework
 
 
-- BackEnd
-  1. PHP (Laravel Framework) 
-  2. SQLite (Database)
-  3. Amazon AWS S3 SDK (File Storage)
-  4. JWT
-  5. Carbon
+### BackEnd
+  * PHP (Laravel Framework) 
+  * SQLite (Database)
+  * Amazon AWS S3 SDK (File Storage)
+
+# Screenshots
+![home](https://user-images.githubusercontent.com/42098783/126074590-089d0bd0-ee8f-45d0-99c0-1d43a1ed2670.png)
+![GameScreen](https://user-images.githubusercontent.com/42098783/126074594-200c6e38-c5ee-4d8c-bf6d-e39082bf0870.png)
+![responsive2](https://user-images.githubusercontent.com/42098783/126074598-dafed247-c1f5-4dc2-825c-d73b643439f2.png)
+![Responsive](https://user-images.githubusercontent.com/42098783/126074602-3fb427f1-dffb-40a1-b6b5-c390f9812967.png)
 
